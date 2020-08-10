@@ -1,4 +1,3 @@
-# Interview
-面试准备
+# Note
 
 ![image](https://github.com/aijifeiyang/Interview/blob/master/images/OIP.jpg)
