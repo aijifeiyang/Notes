@@ -1,3 +1,3 @@
 # Note
 
-![image](https://github.com/aijifeiyang/Interview/blob/master/images/OIP.jpg)
+![image](https://github.com/aijifeiyang/Notes/blob/master/images/%E5%AF%BC%E5%9B%BE.png)
