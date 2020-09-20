@@ -41,6 +41,10 @@ Function.prototype.apply = function (context, arr) {
 
 ## es6 实现写法
 ```javascript
+// 开头也可以这样写
+//Function.prototype.call = function () {
+//  let [thisArg, ...args] = [...arguments]
+//  ... }
 Function.prototype.call = function(context, ...args) {
     // 执行上下文都保证是对象类型，如果不是就是window
     context = Object(context) || window;
