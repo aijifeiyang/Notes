@@ -48,7 +48,7 @@ Function.prototype.apply = function (context, arr) {
 Function.prototype.call = function(context, ...args) {
     // 执行上下文都保证是对象类型，如果不是就是window
     context = Object(context) || window;
-    // 创建一个额外的变量当做context的属性
+    // 创建一个额外的变量当做context的属性，Symbol是 es6新引入的一种数据类型，创建一个唯一的值，且不用new
     const fn = Symbol();
     // 给这个fn属性赋值为当前的函数
     context[fn] = this;
