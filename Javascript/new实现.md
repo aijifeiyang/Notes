@@ -3,7 +3,7 @@ new 运算符创建一个用户定义的对象类型的实例或具有构造函�
 ## es5 实现
 
 ```javascript
-function objectFactory() {
+function new() {
     //从Object.prototype上克隆一个对象
     var obj = new Object(),
     //取得外部传入的构造器
@@ -21,7 +21,7 @@ function objectFactory() {
 ## es6 实现
 
 ```javascript
-function _new() {
+function new() {
     // let obj = Object.create(constructor.prototype);
     let obj = {};
     let [constructor, ...args] = [...arguments];
