@@ -1,5 +1,5 @@
 ##jsonp实现
-
+```javascript
 const jsonp = (opts = {}) => {
     // 通过一个callback参数所对应的函数名来把数据进行写入
     opts.url = `${opts.url}?callback=${opts.callback}`;
@@ -35,3 +35,4 @@ function getData(data) {
     // 通过jsonp拿到的真实数据
     console.log(data);
 }
+```
