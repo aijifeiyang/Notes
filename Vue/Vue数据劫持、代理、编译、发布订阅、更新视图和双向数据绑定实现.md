@@ -6,14 +6,12 @@ class Vue {
         this.$options = options;
         this.$el = options.el;
         this.$data = options.data;
-        // 数据劫持
-        new Observer(this.$data);
-        // 数据代理
+ 
+        new Observer(this.$data); // 数据劫持
         Object.keys(this.$data).forEach(key => {
-            this.proxyData(key);
+            this.proxyData(key);  // 数据代理
         });
-        // 编辑模板
-        new Compiler(this.$el, this);
+        new Compiler(this.$el, this); // 编译模板
     }
 
     proxyData(key) {
@@ -39,17 +37,17 @@ class Observer {
     }
     // 监听数据变化，收集订阅者，并添加到订阅器
     defineReactive(obj, key, value) {
-        const dep = new Dep();
+        const dep = new Dep(); // 新建一个订阅者
         Object.defineProperty(obj, key, {
             enumerable: true,
             configurable: true,
             get() {
-                if (Dep.target) dep.addSub(Dep.target); // 添加订阅者
+                if (Dep.target) dep.addSub(Dep.target); // 添加订阅者到订阅器
                 return value;
             },
             set(newVal) {
                 if (value === newVal) return;
-                dep.notify();
+                dep.notify(); // 通知订阅者更新
                 value = newVal;
             }
         })
@@ -92,7 +90,7 @@ class Compiler {
         this.el = document.querySelector(el);
         this.vm = vm;
         this.frag = this.createFrag(); // 将已有的el元素的所有子元素转成文档碎片
-        this.el.appendChild(this.frag);
+        this.el.appendChild(this.frag); // 将文档碎片重新添加到dom树
     }
 
     createFrag() {
